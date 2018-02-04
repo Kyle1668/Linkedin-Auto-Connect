@@ -1,4 +1,5 @@
 // Script automaticly adds recommended Linkedin connections on linkedin.com/mynetwork/ by target job titles.
+// After every run, the view is scrolled to the bototm of the page to show new connections. 
 // Developed by Kyle O'Brien
 
 function addConnections() {
