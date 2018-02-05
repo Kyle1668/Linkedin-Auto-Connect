@@ -13,9 +13,11 @@ var timer = setInterval(function () {
 }, 3000);
 
 function addConnections() {
+
     var connections = document.getElementsByClassName("mn-pymk-list__cards")[0].getElementsByTagName("li");
 
     for (var i = 0; i < connections.length; i++) {
+        
         var title = connections[i].getElementsByClassName("mn-person-info__occupation")[0].innerText;
         var name = connections[i].getElementsByClassName("mn-person-info__name")[0].innerText;
         var connectButton = connections[i].getElementsByClassName("button-secondary-small")[0];
@@ -24,12 +26,15 @@ function addConnections() {
             if (numRequestsSent == connectionsQuota) {                
                 clearInterval(timer)
                 break;
-            } else {
+            } 
+            else {
                 connectButton.click();
                 numRequestsSent += 1;
                 console.log(name + ": " + title)
             }
         }
+
+        // Scroll to bottom of screen to show more connections.
 
         window.scrollTo(0, document.body.scrollHeight);
     }
@@ -45,6 +50,7 @@ function checkTitle(connectionTitle) {
         "chief technology officer",
         "chief executive officer",
         "human resources",
+        "recruiting",
         "recruiter",
         "investor",
         "sourcer",
