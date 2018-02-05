@@ -6,7 +6,7 @@
 var connectionsQuota = SET_QUOTA_INT;
 var numRequestsSent = 0;
 
-var timer = setInterval(function () {
+var interval = setInterval(function () {
     if (numRequestsSent <= connectionsQuota) {
         addConnections()
     }
