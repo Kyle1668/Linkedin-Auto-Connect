@@ -8,7 +8,7 @@ var numRequestsSent = 0;
 
 var interval = setInterval(function () {
     if (numRequestsSent <= connectionsQuota) {
-        addConnections()
+        addConnections();
     }
 }, 3000);
 
@@ -24,13 +24,13 @@ function addConnections() {
 
         if (checkTitle(title)) {
             if (numRequestsSent == connectionsQuota) {                
-                clearInterval(timer)
+                clearInterval(timer);
                 break;
             } 
             else {
                 connectButton.click();
                 numRequestsSent += 1;
-                console.log(name + ": " + title)
+                console.log(name + ": " + title);
             }
         }
 
