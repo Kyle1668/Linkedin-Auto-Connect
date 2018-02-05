@@ -3,7 +3,7 @@
 // Manually set "connectionQuota" with the number of connection requests you'd like to make.
 // The script will finish executing when quota is met.
 
-var connectionsQuota = SET_THIS_NUM;
+var connectionsQuota = SET_QUOTA_INT;
 var numRequestsSent = 0;
 
 var timer = setInterval(function () {
@@ -44,7 +44,7 @@ function addConnections() {
 
 function checkTitle(connectionTitle) {
 
-    var titleComponents = connectionTitle.toLowerCase().split(" ");
+    var titleComponents = connectionTitle.toLowerCase().split(/[.,\/ -]/);
 
     var targetTitles = [
         "chief technology officer",
