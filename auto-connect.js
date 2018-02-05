@@ -60,7 +60,7 @@ function checkTitle(connectionTitle) {
         "cto",
         "ceo",
         "hr"
-    ]
+    ];
 
     for (var k = 0; k < titleComponents.length; k++) {
         for (var i = 0; i < targetTitles.length; i++) {
