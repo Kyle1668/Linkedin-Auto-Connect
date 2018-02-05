@@ -46,6 +46,8 @@ function checkTitle(connectionTitle) {
 
     var titleComponents = connectionTitle.toLowerCase().split(/[.,\/ -]/);
 
+    // Add or remove elements based on search paramaters. 
+
     var targetTitles = [
         "chief technology officer",
         "chief executive officer",
