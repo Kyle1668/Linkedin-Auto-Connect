@@ -17,6 +17,8 @@ function addConnections() {
 
         window.scrollTo(0,document.body.scrollHeight);
     }
+
+    console.log("Requests Sent: " + numRequestsSent)
 }
 
 function checkTitle(connectionTitle) {
