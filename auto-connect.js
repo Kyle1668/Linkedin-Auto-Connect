@@ -1,21 +1,36 @@
 // Developed by Kyle O'Brien
 
+// Script will halt when quota is met.
+
+var connectionsQuota = SET_THIS_NUM;
+var numRequestsSent = 0;
+
+var timer = setInterval(function () {
+    if (numRequestsSent <= connectionsQuota) {
+        addConnections()
+    }
+}, 3000);
+
 function addConnections() {
-    var numRequestsSent = 0;
     var connections = document.getElementsByClassName("mn-pymk-list__cards")[0].getElementsByTagName("li");
 
     for (var i = 0; i < connections.length; i++) {
         var title = connections[i].getElementsByClassName("mn-person-info__occupation")[0].innerText;
         var name = connections[i].getElementsByClassName("mn-person-info__name")[0].innerText;
         var connectButton = connections[i].getElementsByClassName("button-secondary-small")[0];
-       
+
         if (checkTitle(title)) {
-            console.log(name + ": " + title)
-            connectButton.click();
-            numRequestsSent += 1;
+            if (numRequestsSent == connectionsQuota) {                
+                clearInterval(timer)
+                break;
+            } else {
+                connectButton.click();
+                numRequestsSent += 1;
+                console.log(name + ": " + title)
+            }
         }
 
-        window.scrollTo(0,document.body.scrollHeight);
+        window.scrollTo(0, document.body.scrollHeight);
     }
 
     console.log("Requests Sent: " + numRequestsSent)
@@ -48,5 +63,3 @@ function checkTitle(connectionTitle) {
 
     return false;
 }
-
-addConnections();
