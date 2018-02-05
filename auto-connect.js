@@ -1,6 +1,7 @@
 // Developed by Kyle O'Brien
 
-// Script will halt when quota is met.
+// Manually set "connectionQuota" with the number of connection requests you'd like to make.
+// The script will finish executing when quota is met.
 
 var connectionsQuota = SET_THIS_NUM;
 var numRequestsSent = 0;
