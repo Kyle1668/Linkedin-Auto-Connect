@@ -12,6 +12,22 @@ var interval = setInterval(function () {
     }
 }, 3000);
 
+// Add or remove elements based on search paramaters. 
+
+var targetTitles = [
+	"chief technology officer",
+	"chief executive officer",
+	"human resources",
+	"recruiting",
+	"recruiter",
+	"investor",
+	"sourcer",
+	"talent",
+	"cto",
+	"ceo",
+	"hr"
+];
+
 function addConnections() {
 
     var connections = document.getElementsByClassName("mn-pymk-list__cards")[0].getElementsByTagName("li");
@@ -45,22 +61,6 @@ function addConnections() {
 function checkTitle(connectionTitle) {
 
     var titleComponents = connectionTitle.toLowerCase().split(/[.,\/ -]/);
-
-    // Add or remove elements based on search paramaters. 
-
-    var targetTitles = [
-        "chief technology officer",
-        "chief executive officer",
-        "human resources",
-        "recruiting",
-        "recruiter",
-        "investor",
-        "sourcer",
-        "talent",
-        "cto",
-        "ceo",
-        "hr"
-    ];
 
     for (var k = 0; k < titleComponents.length; k++) {
         for (var i = 0; i < targetTitles.length; i++) {
