@@ -34,8 +34,8 @@ function addConnections() {
 
     for (var i = 0; i < connections.length; i++) {
         
-        var title = connections[i].getElementsByClassName("mn-person-info__occupation")[0].innerText;
-        var name = connections[i].getElementsByClassName("mn-person-info__name")[0].innerText;
+        var title = connections[i].getElementsByClassName("pymk-card__occupation")[0].innerText;
+        var name = connections[i].getElementsByClassName("pymk-card__name")[0].innerText;
         var connectButton = connections[i].getElementsByClassName("button-secondary-small")[0];
 
         if (checkTitle(title)) {
